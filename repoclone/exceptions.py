@@ -4,7 +4,7 @@
 repoclone.exceptions
 -----------------------
 
-All exceptions used in the Cookiecutter code base are defined here.
+All exceptions used in the repoclone code base are defined here.
 """
 
 class RepocloneException(Exception):
@@ -13,6 +13,4 @@ class RepocloneException(Exception):
     this class.
     """
 
-class RepositoryCloneFailed(RepocloneException):
-    """Raised when a repoclone template can't be cloned."""
 

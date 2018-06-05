@@ -6,10 +6,7 @@ import sys
 import click
 
 from .repoclone import repoclone
-from .exceptions import (
-    RepocloneException,
-    RepositoryCloneFailed
-)
+from .exceptions import RepocloneException
 
 @click.command()
 @click.argument(u'host')
@@ -28,6 +25,11 @@ from .exceptions import (
 def main(host=None, user=None, password=None, clone_dir=None):
     """Console script for repoclone."""
 
+    # Validating params
+    if host is None:
+        click.echo(click.get_current_context().get_help())
+        return 0
+
     click.secho("**** Running repoclone ****", fg="green")
 
     click.echo("* host = " + host)
@@ -42,9 +44,8 @@ def main(host=None, user=None, password=None, clone_dir=None):
     try:
         repoclone(type=type, host=host, user=user, password=password,
                 clone_dir=clone_dir)
-    except (RepocloneException,
-            RepositoryCloneFailed) as e:
-        click.secho("Error: " + str(e), fg="red")
+    except RepocloneException as e:
+        click.secho("\nError: " + str(e), fg="red")
         return 1
 
     click.echo("")
