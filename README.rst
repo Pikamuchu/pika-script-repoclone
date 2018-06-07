@@ -9,8 +9,8 @@ Repository Clone
 .. image:: https://travis-ci.org/pikamachu/pika-script-repoclone.svg?branch=master
         :target: https://travis-ci.org/pikamachu/pika-script-repoclone
 
-.. image:: https://api.codacy.com/project/badge/Grade/e4a158fab8ee46b790529ad8169e9b96
-        :target: https://www.codacy.com/app/antonio.marin.jimenez/pika-jwt-services-gateway?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pikamachu/pika-jwt-services-gateway&amp;utm_campaign=Badge_Grade
+.. image:: https://api.codacy.com/project/badge/Grade/e3a81718403b479e8541bd63d4cbdc7d
+        :target: https://www.codacy.com/app/antonio.marin.jimenez/pika-script-repoclone?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pikamachu/pika-script-repoclone&amp;utm_campaign=Badge_Grade
 
 .. image:: https://readthedocs.org/projects/repoclone/badge/?version=latest
         :target: https://repoclone.readthedocs.io/en/latest/?badge=latest
