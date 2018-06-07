@@ -28,10 +28,14 @@ Features
 
 Python script for batch git clone and update (origin pull) from bitbucket and github repositories.
 
+Installation
+------------
+pip install repoclone
+
 Usage
 -----
 
-Usage: python -m repoclone [OPTIONS] HOST
+Usage: repoclone [OPTIONS] HOST
 
   Console script for repoclone.
 

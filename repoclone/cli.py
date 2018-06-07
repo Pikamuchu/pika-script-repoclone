@@ -8,6 +8,7 @@ import click
 from .repoclone import repoclone
 from .exceptions import RepocloneException
 
+
 @click.command()
 @click.argument(u'host')
 @click.option(
@@ -33,17 +34,16 @@ def main(host=None, user=None, password=None, clone_dir=None):
     click.secho("**** Running repoclone ****", fg="green")
 
     click.echo("* host = " + host)
-    if not user is None:
+    if user is not None:
         click.echo("* user = " + user)
 
-    if not clone_dir is None:
+    if clone_dir is not None:
         click.echo("* clone_dir = " + clone_dir)
 
     click.echo("")
 
     try:
-        repoclone(type=type, host=host, user=user, password=password,
-                clone_dir=clone_dir)
+        repoclone(type=type, host=host, user=user, password=password, clone_dir=clone_dir)
     except RepocloneException as e:
         click.secho("\nError: " + str(e), fg="red")
         return 1
@@ -52,6 +52,7 @@ def main(host=None, user=None, password=None, clone_dir=None):
     click.secho("**** Repoclone finish succesfully!! ****", fg="green")
 
     return 0
+
 
 if __name__ == "__main__":
     sys.exit(main())  # pragma: no cover

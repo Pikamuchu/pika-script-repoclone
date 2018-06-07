@@ -7,9 +7,9 @@ The code in this module is also a good example of how to use repoclone as a
 library rather than a script.
 """
 
+
 from __future__ import unicode_literals
 
-import logging
 import httplib
 import ssl
 import json
@@ -25,9 +25,8 @@ BITBUCKET_REPOS_ENDPOINT = "/rest/api/1.0/repos?limit=1000"
 
 REPOS_CLONE_FOLDER = "./repos"
 
-def repoclone(
-        type="BITBUCKET", host=BITBUCKET_HOST, user=None, password=None,
-        clone_dir=REPOS_CLONE_FOLDER, endpoint=BITBUCKET_REPOS_ENDPOINT):
+
+def repoclone(host=None, user=None, password=None, clone_dir=REPOS_CLONE_FOLDER, endpoint=BITBUCKET_REPOS_ENDPOINT):
     """
     Run repoclone just as if using it from the command line.
 
@@ -38,8 +37,12 @@ def repoclone(
     :param endpoint: Repository info REST endpoint.
     """
     # Validating params
+    if host is None:
+        print "host parameter is requiered!"
+        return 2
+
     if clone_dir is None:
-        clone_dir=REPOS_CLONE_FOLDER
+        clone_dir = REPOS_CLONE_FOLDER
 
     # Get repository data
     data = get_repository_data(host, endpoint, user, password)
@@ -62,6 +65,7 @@ def repoclone(
 
     return 0
 
+
 def get_repository_data(host, endpoint, user, password):
     print "Getting repository info from " + host + " ..."
     conn = httplib.HTTPSConnection(host)
@@ -73,7 +77,7 @@ def get_repository_data(host, endpoint, user, password):
         if user is None:
             conn.request("GET", endpoint)
         else:
-            headers = { "Authorization" : "Basic %s" % base64.standard_b64encode(str(user) + ":" + str(password)) }
+            headers = {"Authorization" : "Basic %s" % base64.standard_b64encode(str(user) + ":" + str(password))}
             conn.request("GET", endpoint, headers=headers)
 
         response = conn.getresponse()
@@ -91,25 +95,28 @@ def get_repository_data(host, endpoint, user, password):
 
     return data
 
+
 def create_project_folder(clone_dir, repo):
     project_folder = clone_dir + "/" + repo["project"]["key"]
     if not os.path.exists(project_folder):
         print "Creating project folder " + project_folder
         os.makedirs(project_folder)
-    
+
     return project_folder
+
 
 def get_repo_ssh_clone_url(repo):
     repo_clone = repo["links"]["clone"][0]
     repo_clone_url = repo_clone["href"]
     if not repo_clone["name"] == "ssh":
         repo_clone_url = repo["links"]["clone"][1]["href"]
-    
+
     return repo_clone_url
+
 
 def clone_update_repository(repo_clone_url, project_folder, repo_name):
     try:
-        if not repo_clone_url is None:
+        if repo_clone_url is not None:
             repo_clone_dir = project_folder + "/" + repo_name
             if not os.path.exists(repo_clone_dir):
                 print "Cloning repo " + repo_clone_url + " into " + repo_clone_dir
