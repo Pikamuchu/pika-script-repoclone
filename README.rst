@@ -6,7 +6,7 @@ Repository Clone
 .. image:: https://img.shields.io/pypi/v/repoclone.svg
         :target: https://pypi.python.org/pypi/repoclone
 
-.. image:: https://img.shields.io/travis/pikamachu/repoclone.svg
+.. image:: https://travis-ci.org/pikamachu/pika-script-repoclone.svg?branch=master
         :target: https://travis-ci.org/pikamachu/pika-script-repoclone
 
 .. image:: https://api.codacy.com/project/badge/Grade/e4a158fab8ee46b790529ad8169e9b96
