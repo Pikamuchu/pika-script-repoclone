@@ -20,7 +20,6 @@ from git import Repo
 
 from .exceptions import RepocloneException
 
-BITBUCKET_HOST = "bitbucket.desigual.com"
 BITBUCKET_REPOS_ENDPOINT = "/rest/api/1.0/repos?limit=1000"
 
 REPOS_CLONE_FOLDER = "./repos"
@@ -38,7 +37,7 @@ def repoclone(host=None, user=None, password=None, clone_dir=REPOS_CLONE_FOLDER,
     """
     # Validating params
     if host is None:
-        print "host parameter is requiered!"
+        print("host parameter is requiered!")
         return 2
 
     if clone_dir is None:
@@ -48,11 +47,11 @@ def repoclone(host=None, user=None, password=None, clone_dir=REPOS_CLONE_FOLDER,
     data = get_repository_data(host, endpoint, user, password)
 
     # Processing response
-    print "Processing response ..."
+    print("Processing response ...")
     repos = data["values"]
     for repo in repos:
         repo_name = repo["slug"]
-        print "\nProcessing repo " + repo_name
+        print("\nProcessing repo " + repo_name)
 
         # Creating project folder
         project_folder = create_project_folder(clone_dir, repo)
@@ -67,7 +66,7 @@ def repoclone(host=None, user=None, password=None, clone_dir=REPOS_CLONE_FOLDER,
 
 
 def get_repository_data(host, endpoint, user, password):
-    print "Getting repository info from " + host + " ..."
+    print("Getting repository info from " + host + " ...")
     conn = httplib.HTTPSConnection(host)
     conn._context.check_hostname = False
     conn._context.verify_mode = ssl.CERT_NONE
@@ -88,7 +87,7 @@ def get_repository_data(host, endpoint, user, password):
             raise RepocloneException("Server " + host + " response with code " + str(response.status))
 
     except Exception as e:
-        print "\nGet repository data error: " + str(e)
+        print("\nGet repository data error: " + str(e))
         raise e
     else:
         conn.close()
@@ -99,7 +98,7 @@ def get_repository_data(host, endpoint, user, password):
 def create_project_folder(clone_dir, repo):
     project_folder = clone_dir + "/" + repo["project"]["key"]
     if not os.path.exists(project_folder):
-        print "Creating project folder " + project_folder
+        print("Creating project folder " + project_folder)
         os.makedirs(project_folder)
 
     return project_folder
@@ -119,18 +118,18 @@ def clone_update_repository(repo_clone_url, project_folder, repo_name):
         if repo_clone_url is not None:
             repo_clone_dir = project_folder + "/" + repo_name
             if not os.path.exists(repo_clone_dir):
-                print "Cloning repo " + repo_clone_url + " into " + repo_clone_dir
+                print("Cloning repo " + repo_clone_url + " into " + repo_clone_dir)
                 Repo.clone_from(repo_clone_url, repo_clone_dir)
             else:
                 if os.path.isdir(repo_clone_dir + "/.git"):
-                    print "Repo " + repo_clone_url + " already cloned! Pulling changes!!"
+                    print("Repo " + repo_clone_url + " already cloned! Pulling changes!!")
                     repo = Repo(repo_clone_dir)
                     origin = repo.remotes.origin
                     origin.pull()
                 else:
-                    print "Repo directory " + repo_clone_url + " exists, but not a git repository???!!!???"
+                    print("Repo directory " + repo_clone_url + " exists, but not a git repository???!!!???")
     except Exception as e:
-        print "Clone update repository error: " + str(e)
+        print("Clone update repository error: " + str(e))
         return 1
 
     return 0
