@@ -7,16 +7,16 @@ Repository Clone
         :target: https://pypi.python.org/pypi/repoclone
 
 .. image:: https://img.shields.io/travis/pikamachu/repoclone.svg
-        :target: https://travis-ci.org/pikamachu/repoclone
+        :target: https://travis-ci.org/pikamachu/pika-script-repoclone
+
+.. image:: https://api.codacy.com/project/badge/Grade/e4a158fab8ee46b790529ad8169e9b96
+        :target: https://www.codacy.com/app/antonio.marin.jimenez/pika-jwt-services-gateway?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pikamachu/pika-jwt-services-gateway&amp;utm_campaign=Badge_Grade
 
 .. image:: https://readthedocs.org/projects/repoclone/badge/?version=latest
         :target: https://repoclone.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-
-
-
-Script for repository clone and update.
+Script for repository clone and update (origin pull).
 
 
 * Free software: MIT license
@@ -26,7 +26,20 @@ Script for repository clone and update.
 Features
 --------
 
-* TODO
+Python script for batch git clone and update (origin pull) from bitbucket and github repositories.
+
+Usage
+-----
+
+Usage: python -m repoclone [OPTIONS] HOST
+
+  Console script for repoclone.
+
+Options:
+  -u, --user TEXT       Repository user
+  -p, --password TEXT   Repository password
+  -d, --clone_dir TEXT  Repository clone directory
+  --help                Show this message and exit.
 
 Credits
 -------
