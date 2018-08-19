@@ -32,13 +32,13 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/pikamachu/repoclone
+    $ git clone git://github.com/pikamachu/pika-script-repoclone
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/pikamachu/repoclone/tarball/master
+    $ curl  -OL https://github.com/pikamachu/pika-script-repoclone/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/pikamachu/repoclone
-.. _tarball: https://github.com/pikamachu/repoclone/tarball/master
+.. _Github repo: https://github.com/pikamachu/pika-script-repoclone
+.. _tarball: https://github.com/pikamachu/pika-script-repoclone/tarball/master

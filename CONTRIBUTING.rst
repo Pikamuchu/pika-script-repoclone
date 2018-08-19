@@ -15,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/pikamachu/repoclone/issues.
+Report bugs at https://github.com/pikamachu/pika-script-repoclone/issues.
 
 If you are reporting a bug, please include:
 
@@ -59,15 +59,15 @@ Get Started!
 
 Ready to contribute? Here's how to set up `repoclone` for local development.
 
-1. Fork the `repoclone` repo on GitHub.
+1. Fork the `pika-script-repoclone` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/repoclone.git
+    $ git clone git@github.com:your_name_here/pika-script-repoclone.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
 
-    $ mkvirtualenv repoclone
-    $ cd repoclone/
+    $ mkvirtualenv pika-script-repoclone
+    $ cd pika-script-repoclone/
     $ python setup.py develop
 
 4. Create a branch for local development::
@@ -103,7 +103,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 2.7, 3.4, 3.5 and 3.6, and for PyPy. Check
-   https://travis-ci.org/pikamachu/repoclone/pull_requests
+   https://travis-ci.org/pikamachu/pika-script-repoclone/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 Tips
