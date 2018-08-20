@@ -13,7 +13,8 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
 	'Click>=6.0',
-	'GitPython>=2.1.10'
+	'GitPython>=2.1.10',
+    'pygithub>=1.40'
 ]
 
 setup_requirements = [ ]
