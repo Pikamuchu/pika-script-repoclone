@@ -43,7 +43,7 @@ def main(host=None, user=None, password=None, clone_dir=None):
     click.echo("")
 
     try:
-        repoclone(type=type, host=host, user=user, password=password, clone_dir=clone_dir)
+        repoclone(host=host, user=user, password=password, clone_dir=clone_dir)
     except RepocloneException as e:
         click.secho("\nError: " + str(e), fg="red")
         return 1
