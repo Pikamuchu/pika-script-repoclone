@@ -12,8 +12,6 @@ import os
 
 from git import Repo
 
-from .exceptions import RepocloneException
-
 class RepoTools:
     """
     Repo tools

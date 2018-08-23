@@ -10,14 +10,8 @@ library rather than a script.
 
 from __future__ import unicode_literals
 
-import httplib
-import ssl
-import json
-import os
-import base64
 import re
 
-from .exceptions import RepocloneException
 from .bitbucketrepo import BitbucketRepo
 from .bitbucketprivaterepo import BitbucketPrivateRepo
 from .githubrepo import GithubRepo

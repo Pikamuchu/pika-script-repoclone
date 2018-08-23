@@ -14,7 +14,8 @@ with open('HISTORY.rst') as history_file:
 requirements = [
 	'Click>=6.0',
 	'GitPython>=2.1.10',
-    'pygithub>=1.40'
+    'pygithub>=1.40',
+    'pybitbucket>=0.12.0'
 ]
 
 setup_requirements = [ ]
@@ -53,6 +54,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/pikamachu/pika-script-repoclone',
-    version='0.1.1',
+    version='0.2.0',
     zip_safe=False,
 )

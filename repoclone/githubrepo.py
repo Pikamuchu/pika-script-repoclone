@@ -8,11 +8,9 @@ Github repository processor
 
 from __future__ import unicode_literals
 
-from git import Repo
 from github import Github
 
 from .repotools import RepoTools
-from .exceptions import RepocloneException
 
 class GithubRepo:
     """

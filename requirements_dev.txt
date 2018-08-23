@@ -10,3 +10,4 @@ twine==1.10.0
 click==6.7
 GitPython==2.1.11
 pygithub==1.40
+pybitbucket==0.12.0

@@ -11,10 +11,7 @@ from __future__ import unicode_literals
 import httplib
 import ssl
 import json
-import os
 import base64
-
-from git import Repo
 
 from .repotools import RepoTools
 from .exceptions import RepocloneException

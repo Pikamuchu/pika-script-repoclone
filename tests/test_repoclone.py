@@ -9,7 +9,6 @@ from click.testing import CliRunner
 
 from repoclone import repoclone
 from repoclone import cli
-from repoclone import repoclone as main
 
 class TestRepoclone(unittest.TestCase):
     """Tests for `repoclone` package."""
@@ -27,9 +26,3 @@ class TestRepoclone(unittest.TestCase):
         assert result.exit_code == 2
         help_result = runner.invoke(cli.main, ['--help'])
         assert help_result.exit_code == 0
-
-    def test_repoclone_main(self):
-        """Test the repoclone main."""
-        result = main.repoclone()
-        assert result == 2
-
